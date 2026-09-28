@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKA Bahasa Inggris Grade XII | Science Fiction & Renewable Energy</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0f9ff',
+            100: '#e0f2fe',
+            500: '#0284c7',
+            600: '#0369a1',
+            700: '#075985',
+            800: '#0c4a6e',
+            900: '#082f49',
+          },
+          solarpunk: {
+            gold: '#f59e0b',
+            teal: '#14b8a6',
+            emerald: '#10b981',
+            cyan: '#06b6d4',
+            violet: '#8b5cf6',
+            darkBg: '#090d16',
+            darkCard: '#111827'
+          }
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          display: ['Orbitron', 'sans-serif'],
+          sci: ['"Space Grotesk"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.7);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+}
+.dark .glow-box-cyan {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.4), rgba(245, 158, 11, 0.4));
+  padding: 1px;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</head>
+
+<body class="bg-slate-50 dark:bg-solarpunk-darkBg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col antialiased">
+
+<!-- TOP HEADER BAR -->
+<header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3 cursor-pointer" onclick="showLandingCover()">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-teal-500 to-amber-500 flex items-center justify-center text-white font-display text-lg shadow-md shadow-cyan-500/20">
+        <i class="fa-solid fa-atom animate-spin-slow"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-800">TKA Bahasa Inggris</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:inline">Kelas XII SMA/MA</span>
+        </div>
+        <h1 class="text-base sm:text-lg font-bold font-sci tracking-tight text-slate-900 dark:text-white leading-tight">
+          Science Fiction & Renewable Energy
+        </h1>
+      </div>
+    </div>
+
+    <!-- Quick Tool Controls -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Return to Front Cover Thumbnail Button -->
+      <button onclick="showLandingCover()" title="View Front Page Cover / Student Profile" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-id-card text-amber-500"></i>
+        <span class="hidden md:inline">Cover / Profile</span>
+      </button>
+
+      <!-- Mode Toggle (Exam / Practice) -->
+      <button id="modeToggleBtn" title="Toggle Practice Mode (Instant Answers)" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-graduation-cap text-cyan-500"></i>
+        <span id="modeLabel" class="hidden md:inline">Mode: Exam</span>
+      </button>
+
+      <!-- Font Size Adjuster -->
+      <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700">
+        <button id="fontDecBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-cyan-500" title="Decrease Font Size">A-</button>
+        <span class="text-[10px] text-slate-400 px-1">|</span>
+        <button id="fontIncBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-cyan-500" title="Increase Font Size">A+</button>
+      </div>
+
+      <!-- Timer Indicator -->
+      <div class="flex items-center gap-2 bg-amber-500/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 text-xs font-mono font-bold">
+        <i class="fa-regular fa-clock"></i>
+        <span id="timerDisplay">60:00</span>
+      </div>
+
+      <!-- Dark Mode Switch -->
+      <button id="themeToggleBtn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-500 transition">
+        <i id="themeIcon" class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION 1: FRONT PAGE COVER / THUMBNAIL LANDING HERO -->
+<section id="landingCoverSection" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full transition-all duration-300">
+  
+  <div class="gradient-border shadow-2xl overflow-hidden bg-slate-900 text-white">
+    <div class="relative p-6 sm:p-10 md:p-12 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 rounded-[1.2rem]">
+      
+      <!-- Background Ambient Glow -->
+      <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Left Banner Details (The Thumbnail Poster Design) -->
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-bolt text-amber-400"></i> Tes Kemampuan Akademik (TKA) HOTS
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-teal-200 to-amber-300 leading-tight">
+            BAHASA INGGRIS <br>
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-sci text-white font-bold">KELAS XII SMA / MA</span>
+          </h1>
+
+          <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm text-slate-300 space-y-2">
+            <div class="font-bold text-amber-400 font-sci text-base flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-book-journal-whills"></i> Narrative Text: Science Fiction & Renewable Energy
+            </div>
+            <p class="leading-relaxed">
+              Ujian CBT Interaktif berisi <strong>30 Soal HOTS</strong> (Pilihan Ganda A–E) dengan 6 Teks Fiksi Ilmiah Terintegrasi: Solar, Wind, Geothermal, Biopower, Fusion, & Future Harvesting Technology.
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 pt-2">
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-stopwatch text-cyan-400 text-base"></i>
+              <span>60 Minutes Time</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-brain text-amber-400 text-base"></i>
+              <span>HOTS Inference</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-chart-pie text-emerald-400 text-base"></i>
+              <span>Instant Analysis</span>
+            </div>
+          </div>
+
+          <!-- Author Branding -->
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-amber-500 flex items-center justify-center text-white font-bold shadow-lg">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="text-left text-xs">
+              <div class="text-cyan-400 font-mono font-semibold text-[10px] uppercase">Pengembang / Author</div>
+              <div class="text-sm font-bold text-white">Asep Subagja, S.Pd</div>
+              <div class="text-slate-400">SMAN 1 Ciracap • 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Student Entry & Launch Card -->
+        <div class="lg:col-span-5 bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-2xl space-y-5">
+          <div class="border-b border-slate-800 pb-3">
+            <h3 class="text-lg font-bold font-sci text-white flex items-center gap-2">
+              <i class="fa-solid fa-id-card text-cyan-400"></i> Identitas Peserta Ujian
+            </h3>
+            <p class="text-xs text-slate-400">Isi data sebelum memulai pengerjaan tes.</p>
+          </div>
+
+          <form id="studentDataForm" onsubmit="handleStartExam(event)" class="space-y-4 text-left">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Nama Lengkap Siswa</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="studentNameInput" required placeholder="Contoh: Ahmad Rizki" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Kelas / Jurusan</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-graduation-cap"></i></span>
+                  <input type="text" id="studentClassInput" required placeholder="XII MIPA 1" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Nomor Peserta / NISN</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-hashtag"></i></span>
+                  <input type="text" id="studentNisnInput" placeholder="006123456" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Asal Sekolah</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-school"></i></span>
+                <input type="text" id="studentSchoolInput" required value="SMAN 1 Ciracap" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500 transition">
+              </div>
+            </div>
+
+            <div class="pt-2 space-y-2">
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-amber-500 hover:from-cyan-400 hover:to-amber-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-play-circle text-lg"></i> Mulai Ujian Sekarang
+              </button>
+              
+              <button type="button" onclick="startPracticeDirectly()" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Mode Latihan Interaktif (Practice Mode)
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- TOPIC NAVIGATOR BAR -->
+<div id="topicNavBar" class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3 px-4 sm:px-6 lg:px-8 shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs no-scrollbar w-full" id="topicPillsContainer">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- MAIN INTERACTIVE WORKSPACE (EXAM AREA) -->
+<main id="examWorkspace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- LEFT PANEL: Narrative Reading Text (Lg: 6 cols) -->
+    <section class="lg:col-span-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-sm sticky top-20 max-h-[80vh] flex flex-col">
+      <!-- Story Header -->
+      <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span id="storyTag" class="px-2.5 py-1 text-xs font-bold rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+            Topic 1 of 6
+          </span>
+          <span id="storyThemeBadge" class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            Solar Energy
+          </span>
+        </div>
+        <div class="text-xs text-slate-400 font-mono">
+          Questions <span id="storyQRange" class="font-bold text-slate-700 dark:text-slate-200">1 - 5</span>
+        </div>
+      </div>
+
+      <!-- Story Title & Content -->
+      <div id="storyTitle" class="text-xl font-bold font-sci text-cyan-700 dark:text-cyan-300 mt-4 mb-3">
+        Text 1 — The Last Sunflower
+      </div>
+
+      <div id="storyBody" class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed space-y-3 overflow-y-auto pr-2 flex-1 font-sans text-justify">
+        <!-- Content injected dynamically -->
+      </div>
+
+      <!-- Footer Story Tools -->
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span><i class="fa-solid fa-book-open mr-1 text-cyan-500"></i> Read carefully before answering</span>
+        <button id="scrollToTopStory" class="hover:text-cyan-500 transition">Top <i class="fa-solid fa-arrow-up ml-1"></i></button>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: Question Panel & Navigation (Lg: 6 cols) -->
+    <section class="lg:col-span-6 space-y-6">
+      
+      <!-- QUESTION CARD -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-md relative glow-box-cyan">
+        
+        <!-- Card Header -->
+        <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <span id="qNumberBadge" class="w-8 h-8 rounded-lg bg-cyan-600 text-white font-bold font-mono text-sm flex items-center justify-center shadow">
+              Q1
+            </span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+              TKA HOTS Question
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- Flag button -->
+            <button id="flagBtn" class="px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1">
+              <i class="fa-solid fa-bookmark"></i>
+              <span id="flagText" class="hidden sm:inline">Flag</span>
+            </button>
+            
+            <span id="skillBadge" class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+              Main Idea / Conflict
+            </span>
+          </div>
+        </div>
+
+        <!-- Question Prompt -->
+        <div id="qPrompt" class="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-100 my-4 leading-snug">
+          What is the central conflict in the story?
+        </div>
+
+        <!-- Options Container -->
+        <div id="qOptions" class="space-y-3 my-4">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Instant Feedback Box (Visible in Practice Mode) -->
+        <div id="feedbackBox" class="hidden my-4 p-4 rounded-xl text-xs sm:text-sm leading-relaxed border">
+          <!-- Feedback injected dynamically -->
+        </div>
+
+        <!-- Navigation Action Buttons -->
+        <div class="flex items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button id="prevQBtn" class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed">
+            <i class="fa-solid fa-chevron-left"></i> Previous
+          </button>
+
+          <button id="nextQBtn" class="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-cyan-600/20">
+            Next <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION PALETTE GRID -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-grip text-cyan-500"></i> Question Palette (1 - 30)
+          </h3>
+          <span id="answeredCount" class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400">
+            0 / 30 Answered
+          </span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-cyan-500 to-amber-500 h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- Grid Matrix -->
+        <div id="paletteGrid" class="grid grid-cols-6 sm:grid-cols-10 gap-2 pt-2">
+          <!-- 30 Buttons generated by JS -->
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-cyan-600 inline-block"></span> Current</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Answered</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> Flagged</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-200 dark:bg-slate-800 border inline-block"></span> Unanswered</span>
+        </div>
+
+        <!-- Submit Test Button -->
+        <div class="pt-3">
+          <button id="finishTestBtn" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-cyan-600 hover:from-amber-600 hover:to-cyan-700 text-white font-extrabold text-sm uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Finish & Check Test Results
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- TEST RESULTS MODAL -->
+<div id="resultModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl space-y-6">
+    
+    <!-- Modal Header -->
+    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+      <div>
+        <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          Official TKA Result Report
+        </span>
+        <h2 class="text-2xl font-black font-sci text-slate-900 dark:text-white mt-2">
+          Academic Performance Summary
+        </h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Siswa: <strong id="resStudentName" class="text-slate-800 dark:text-slate-200">-</strong> | 
+          Kelas: <span id="resStudentClass">-</span> | 
+          Sekolah: <span id="resStudentSchool">-</span>
+        </p>
+      </div>
+      <button id="closeModalBtn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl font-bold p-2">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Score Metric Overview Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wider">Final Score</div>
+        <div id="finalScoreVal" class="text-4xl sm:text-5xl font-extrabold font-display text-cyan-600 dark:text-cyan-300 my-1">
+          0 / 30
+        </div>
+        <div id="finalPercentage" class="text-sm font-bold text-slate-600 dark:text-slate-300">0% Accuracy</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-wider">HOTS Proficiency</div>
+        <div id="gradeBadge" class="text-2xl font-black text-amber-600 dark:text-amber-300 my-2">
+          Grade: -
+        </div>
+        <div id="gradeDesc" class="text-xs text-slate-500 dark:text-slate-400">Complete review below</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Completion Stats</div>
+        <div id="timeTakenVal" class="text-xl font-bold text-slate-800 dark:text-slate-200 my-2">
+          00:00 Time
+        </div>
+        <div id="answeredRatio" class="text-xs text-slate-500 dark:text-slate-400">30 of 30 Attempted</div>
+      </div>
+    </div>
+
+    <!-- Detailed Answer Review Section -->
+    <div class="space-y-4">
+      <h3 class="text-base font-bold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center justify-between">
+        <span><i class="fa-solid fa-magnifying-glass text-cyan-500 mr-2"></i> Item Review & Detailed Explanations</span>
+        <span class="text-xs font-normal text-slate-500">30 Questions</span>
+      </h3>
+      <div id="reviewContainer" class="space-y-4 max-h-[380px] overflow-y-auto pr-2">
+        <!-- Review cards injected by JS -->
+      </div>
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+      <div class="text-xs text-slate-500">
+        Developer: <strong>Asep Subagja, S.Pd</strong> (SMAN 1 Ciracap - 2026)
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="printResultBtn" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-print"></i> Print / Export PDF
+        </button>
+        <button id="restartTestBtn" class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-rotate-right"></i> Retake Test
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CUSTOM CONFIRMATION & DIALOG MODAL (No Alert/Confirm) -->
+<div id="customDialogModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 text-center">
+    <div id="dialogIconContainer" class="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-xl bg-amber-500/10 text-amber-500">
+      <i class="fa-solid fa-circle-question"></i>
+    </div>
+    <h3 id="dialogTitle" class="text-lg font-bold font-sci text-slate-900 dark:text-white">Confirmation</h3>
+    <p id="dialogMessage" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Are you sure?</p>
+    <div id="dialogActions" class="flex items-center justify-center gap-3 pt-2">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="mt-auto bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 text-center">
+  <div class="max-w-7xl mx-auto px-4 space-y-2">
+    <p class="font-sci text-cyan-400 font-semibold">TKA Bahasa Inggris Kelas XII SMA/MA • Science Fiction & Renewable Energy</p>
+    <p>Pengembang / Author: Asep Subagja, S.Pd — SMAN 1 Ciracap (2026)</p>
+  </div>
+</footer>
+
+<script>
+const dataset = [
+  {
+    topicId: 1,
+    topicName: "Solar Energy",
+    storyTitle: "Text 1 — The Last Sunflower",
+    storyParagraphs: [
+      "By the year 2148, most cities on Earth had become vertical settlements. Buildings stretched hundreds of meters into the sky, and their glass walls were covered with transparent solar cells. In the city of Helios, however, the energy system was failing.",
+      "Seventeen-year-old Mara lived with her grandfather on the 146th floor of Tower Seven. Every morning, she checked the energy monitor outside their apartment. The number had been falling for weeks. Scientists blamed a layer of atmospheric dust that had reduced the amount of sunlight reaching the city.",
+      "One afternoon, Mara discovered an old metal box in her grandfather's workshop. Inside was a collection of sunflower seeds and a handwritten note: When machines cannot follow the sun, let life do it.",
+      "Her grandfather explained that before the solar towers dominated the city, engineers had experimented with biological solar collectors. Certain plants could be genetically modified to track sunlight and convert a portion of it into usable electrical energy. The project had been abandoned because the machines were more efficient.",
+      "Mara planted one of the seeds in the abandoned botanical laboratory beneath Tower Seven. For three weeks, nothing happened. Then a golden stem emerged. Unlike ordinary sunflowers, it slowly moved toward the brightest patch of sky even when the clouds were thick.",
+      "Mara connected a small energy converter to the plant. The output was tiny, but remarkably stable. She realized that thousands of such plants could supplement the city's failing solar network.",
+      "The city council initially rejected her proposal. They wanted to wait until engineers repaired the orbital solar collectors. Mara, however, argued that waiting for a perfect solution was dangerous.",
+      "Eventually, the council allowed her to conduct a limited experiment. Within months, the botanical gardens became an auxiliary power station.",
+      "The plants did not replace the machines. They simply gave the city another way to survive."
+    ],
+    questions: [
+      {
+        qNum: 1,
+        skill: "Main Idea / Core Conflict",
+        prompt: "What is the central conflict in the story?",
+        options: [
+          "Mara wants to replace modern technology with traditional farming.",
+          "Helios must overcome an energy shortage caused by reduced sunlight.",
+          "The city council refuses to support any form of renewable energy.",
+          "Mara and her grandfather disagree about the future of solar technology.",
+          "Scientists attempt to destroy the biological solar collector project."
+        ],
+        correct: "B",
+        explanation: "The central conflict is Helios's energy shortage caused by atmospheric dust reducing sunlight. Options A, C, D, and E distort the character motivations and plot."
+      },
+      {
+        qNum: 2,
+        skill: "Inference / Interpretation",
+        prompt: "What can be inferred from the sentence, “When machines cannot follow the sun, let life do it”?",
+        options: [
+          "Biological systems may provide solutions when mechanical systems become limited.",
+          "Plants are expected to completely replace all technological energy systems.",
+          "Machines are inherently less useful than biological organisms.",
+          "Human beings should abandon technological development.",
+          "Natural organisms can generate unlimited electricity without technology."
+        ],
+        correct: "A",
+        explanation: "The phrase suggests that biological organisms (life) can complement technology (machines) when mechanical systems encounter physical limits."
+      },
+      {
+        qNum: 3,
+        skill: "Author's Purpose / Cause & Effect",
+        prompt: "Why does the author mention that the biological solar project had been abandoned?",
+        options: [
+          "To show that earlier scientists had completely misunderstood plants.",
+          "To explain why Mara initially knows very little about the technology.",
+          "To establish that a previously rejected idea can become useful under new circumstances.",
+          "To prove that biological energy is more efficient than conventional solar power.",
+          "To suggest that technological research should always be discontinued."
+        ],
+        correct: "C",
+        explanation: "The abandonment shows that an older, less efficient idea can regain critical value when circumstances change."
+      },
+      {
+        qNum: 4,
+        skill: "Vocabulary in Context",
+        prompt: "The word “supplement” in paragraph 6 is closest in meaning to ...",
+        options: ["replace", "restrict", "support", "measure", "eliminate"],
+        correct: "C",
+        explanation: "In this context, 'supplement' means to add to or support an existing energy network, rather than completely replace it."
+      },
+      {
+        qNum: 5,
+        skill: "Underlying Theme / Moral Lesson",
+        prompt: "Which statement best expresses the underlying theme of the story?",
+        options: [
+          "Technological progress should always eliminate older scientific ideas.",
+          "Natural resources are valuable only when they produce large amounts of energy.",
+          "Effective solutions may emerge when technology and nature are allowed to complement each other.",
+          "Scientific experiments should be approved only after they have guaranteed results.",
+          "Renewable energy systems are successful only when they depend entirely on machines."
+        ],
+        correct: "C",
+        explanation: "The narrative emphasizes symbiosis between natural adaptation and human technology rather than total replacement."
+      }
+    ]
+  },
+  {
+    topicId: 2,
+    topicName: "Wind Energy",
+    storyTitle: "Text 2 — The Wind Beneath Aurora",
+    storyParagraphs: [
+      "In 2162, the floating city of Aurora drifted above the Pacific Ocean. Its enormous turbines captured high-altitude winds and converted them into electricity. The city had never used fossil fuels, and its residents were proud of that achievement.",
+      "Yet one winter, the wind became strangely unpredictable.",
+      "Sixteen-year-old Kenji, an apprentice engineer, noticed that the turbines were producing less energy even though the wind-speed sensors reported strong currents. When he inspected the central control system, he found something unusual: the sensors had been programmed to ignore irregular wind patterns.",
+      "The city's chief engineer, Dr. Vale, dismissed Kenji's concern. According to the official model, the atmosphere was behaving normally. Kenji was not convinced.",
+      "He launched a small drone beyond the city's protected airspace. The drone discovered enormous spirals of warm air rising from the ocean. These thermal currents were colliding with the high-altitude winds and causing turbulence.",
+      "Kenji realized that the turbines were not failing. The control system was failing to understand the atmosphere.",
+      "Instead of forcing the turbines to maintain a fixed rotation speed, Kenji proposed an adaptive system. The turbines would change their blade angles according to real-time atmospheric conditions. The system would sometimes allow the turbines to slow down deliberately, reducing stress and capturing energy more efficiently when the wind returned.",
+      "Dr. Vale hesitated. Slowing a turbine sounded like wasting energy.",
+      "Kenji explained that maximizing output at every moment was not the same as maximizing energy over time.",
+      "After a week of testing, the adaptive system increased the city's weekly energy production by twelve percent. More importantly, turbine damage decreased significantly.",
+      "Dr. Vale later admitted that the old system had treated nature as a predictable machine.",
+      "Kenji smiled. “Perhaps the smartest machine,” he said, “is the one that knows when nature refuses to behave like one.”"
+    ],
+    questions: [
+      {
+        qNum: 6,
+        skill: "Main Idea",
+        prompt: "What is the main idea of the story?",
+        options: [
+          "Wind turbines become unnecessary when atmospheric conditions change.",
+          "Aurora's engineers discover that wind energy can be improved by adapting technology to natural variability.",
+          "Floating cities are more efficient than land-based cities because they use stronger winds.",
+          "Kenji proves that automated systems are always superior to human engineers.",
+          "Atmospheric turbulence makes renewable energy impossible to manage."
+        ],
+        correct: "B",
+        explanation: "The story demonstrates how adapting technological controls to real-time atmospheric fluctuations optimizes overall wind energy capture."
+      },
+      {
+        qNum: 7,
+        skill: "Cause & Effect Analysis",
+        prompt: "Why did Kenji disagree with the official explanation of the energy decline?",
+        options: [
+          "He discovered that the turbines had been deliberately damaged.",
+          "He believed the sensors were reporting conditions that did not fully represent actual atmospheric behavior.",
+          "He knew that wind energy was fundamentally unreliable.",
+          "He wanted to replace the turbines with solar panels.",
+          "He had previously designed a completely different energy system."
+        ],
+        correct: "B",
+        explanation: "Kenji recognized that the programming ignored irregular wind patterns, making the sensor models inaccurate."
+      },
+      {
+        qNum: 8,
+        skill: "Logical Deduction / Inference",
+        prompt: "What does the statement “maximizing output at every moment was not the same as maximizing energy over time” imply?",
+        options: [
+          "Temporary reductions in production can sometimes lead to greater long-term efficiency.",
+          "Renewable energy systems should always operate at their maximum capacity.",
+          "Energy production becomes efficient only when machines are switched off regularly.",
+          "Wind turbines produce more energy when atmospheric conditions are ignored.",
+          "Engineers should prioritize immediate energy production over equipment durability."
+        ],
+        correct: "A",
+        explanation: "Temporarily slowing down reduces equipment wear and positions turbines to capture energy more effectively over long durations."
+      },
+      {
+        qNum: 9,
+        skill: "Author's Tone / Attitude",
+        prompt: "The author's attitude toward Kenji's solution can best be described as ...",
+        options: ["dismissive", "skeptical", "supportive", "indifferent", "hostile"],
+        correct: "C",
+        explanation: "The narrative portrays Kenji's adaptive proposal as an intelligent, effective solution that improves energy output and reduces damage."
+      },
+      {
+        qNum: 10,
+        skill: "Plot Analysis (Turning Point)",
+        prompt: "Which event functions as the turning point of the story?",
+        options: [
+          "Aurora residents become proud of their renewable-energy system.",
+          "Kenji becomes an apprentice engineer.",
+          "Dr. Vale initially rejects Kenji's concern.",
+          "Kenji discovers the interaction between thermal currents and high-altitude winds.",
+          "The adaptive system produces twelve percent more weekly energy."
+        ],
+        correct: "D",
+        explanation: "Kenji's discovery of thermal currents interacting with high-altitude winds directly alters his understanding and leads to the successful solution."
+      }
+    ]
+  },
+  {
+    topicId: 3,
+    topicName: "Geothermal Energy",
+    storyTitle: "Text 3 — Beneath the Black Mountain",
+    storyParagraphs: [
+      "For centuries, the people of Aruna had feared Mount Veyra. The mountain had never erupted, but its underground heat was so intense that ancient legends described it as the sleeping heart of a giant.",
+      "In 2190, scientists discovered that the heat beneath Veyra could provide geothermal energy for the entire region. A deep geothermal plant was constructed, and Aruna finally had a stable source of electricity.",
+      "Among the engineers was seventeen-year-old Liora, who was responsible for monitoring underground pressure.",
+      "One night, Liora noticed a strange pattern. The pressure beneath one drilling zone was increasing while the temperature was decreasing. According to the plant's computer model, such a combination was impossible.",
+      "Her supervisor suggested that she ignore the anomaly because the system was still operating safely.",
+      "Liora investigated further. She discovered that a previously unknown underground water channel had been opened by drilling. Cold water was entering the hot rock layer and rapidly changing the pressure distribution.",
+      "The discovery presented a difficult choice. Closing the channel would reduce energy production for several months. Keeping it open, however, might cause a sudden pressure release.",
+      "The plant director initially wanted to continue operating. Aruna had recently built several industries that depended on the geothermal plant.",
+      "Liora argued that energy security meant little if the source of that energy became unstable.",
+      "After a tense meeting, the director ordered a controlled shutdown. Engineers redirected the underground water and reinforced the drilling zone.",
+      "Aruna experienced several months of electricity shortages, but the geothermal plant eventually reopened.",
+      "The incident changed the city's philosophy. From then on, every major energy project was required to include an environmental risk assessment—not only for immediate effects but also for hidden changes beneath the surface."
+    ],
+    questions: [
+      {
+        qNum: 11,
+        skill: "Central Dilemma",
+        prompt: "What is the central dilemma faced by the engineers?",
+        options: [
+          "Whether to replace geothermal energy with solar energy.",
+          "Whether to continue producing energy despite evidence of a potentially dangerous geological change.",
+          "Whether to move Aruna's population away from Mount Veyra.",
+          "Whether to trust ancient legends about the mountain.",
+          "Whether to build more industries near the geothermal plant."
+        ],
+        correct: "B",
+        explanation: "The engineers are torn between maintaining short-term economic power demands and preventing a potential underground disaster."
+      },
+      {
+        qNum: 12,
+        skill: "Data Interpretation",
+        prompt: "Why is the pressure-temperature pattern significant?",
+        options: [
+          "It confirms that the geothermal system is operating normally.",
+          "It demonstrates that the computer model has accurately predicted every underground condition.",
+          "It indicates that an unexpected underground process may be affecting the stability of the plant.",
+          "It proves that geothermal energy is unsuitable for industrial development.",
+          "It shows that the mountain is preparing to erupt."
+        ],
+        correct: "C",
+        explanation: "The contradictory readings indicated an unpredicted physical disruption (cold water intrusion) underground."
+      },
+      {
+        qNum: 13,
+        skill: "Inference",
+        prompt: "What can be logically inferred from the controlled shutdown?",
+        options: [
+          "The city considered short-term energy shortages less important than preventing a potentially larger disaster.",
+          "The geothermal plant had permanently failed.",
+          "The director had completely lost confidence in geothermal energy.",
+          "Aruna's industries were no longer dependent on electricity.",
+          "The underground water channel had no environmental significance."
+        ],
+        correct: "A",
+        explanation: "Accepting temporary shortages to fix the channel proves safety and long-term sustainability were prioritized over short-term power."
+      },
+      {
+        qNum: 14,
+        skill: "Quote Interpretation",
+        prompt: "The phrase “energy security meant little if the source of that energy became unstable” primarily conveys the idea that ...",
+        options: [
+          "energy production should always be maximized regardless of risk.",
+          "reliable energy requires consideration of the long-term stability of its source.",
+          "geothermal energy is inherently less reliable than other renewable sources.",
+          "environmental protection should be considered only after economic development.",
+          "technological systems can eliminate all natural risks."
+        ],
+        correct: "B",
+        explanation: "Liora's point emphasizes that energy supply cannot be termed 'secure' if the natural resource foundation is endangered."
+      },
+      {
+        qNum: 15,
+        skill: "Moral / Environmental Lesson",
+        prompt: "Which lesson is most strongly conveyed by the story?",
+        options: [
+          "Economic development should never depend on renewable energy.",
+          "Scientific models are always more reliable than human observation.",
+          "Environmental risks should be considered as part of sustainable technological development.",
+          "Natural phenomena should be avoided whenever they cannot be fully controlled.",
+          "Temporary electricity shortages are always preferable to technological innovation."
+        ],
+        correct: "C",
+        explanation: "The city's new mandatory policy requiring environmental risk assessments highlights the story's core lesson."
+      }
+    ]
+  },
+  {
+    topicId: 4,
+    topicName: "Biopower",
+    storyTitle: "Text 4 — The Green Pulse",
+    storyParagraphs: [
+      "In 2205, the city of Novaris had solved one of its most difficult problems: organic waste. Instead of sending food scraps and agricultural waste to landfills, the city placed them in enormous bioreactors. Microorganisms broke down the material and released methane, which was then converted into electricity.",
+      "The system, known as Green Pulse, supplied nearly twenty percent of the city's energy.",
+      "Sixteen-year-old Amara volunteered at the municipal energy laboratory. She noticed that Green Pulse's output had fallen sharply over several months.",
+      "Engineers initially blamed the changing composition of the city's waste. Amara, however, noticed that a new household cleaning product had become popular during the same period.",
+      "She tested samples and discovered that traces of the chemical were entering the bioreactors. The substance did not kill the microorganisms, but it slowed their metabolism.",
+      "Amara recommended banning the product immediately. The city council refused. Thousands of households had already purchased it, and several manufacturers warned that a ban would create economic disruption.",
+      "Instead, Amara proposed a different solution. Engineers could separate the chemical from organic waste before it entered the bioreactors. The process would require additional equipment but would allow the city to keep both the cleaning product and the energy system.",
+      "After several months of testing, the new filtration process restored Green Pulse's output.",
+      "The experience taught Amara that environmental problems rarely existed in isolation. A product designed to make homes cleaner had unintentionally affected a system designed to make the city cleaner.",
+      "At the laboratory entrance, she wrote a sentence on the wall: Every solution becomes part of another system."
+    ],
+    questions: [
+      {
+        qNum: 16,
+        skill: "Primary Conflict",
+        prompt: "What is the primary conflict in the story?",
+        options: [
+          "Amara wants to replace biopower with fossil fuels.",
+          "The city must address declining biopower production caused by an unintended interaction between two systems.",
+          "Engineers refuse to use microorganisms in the energy system.",
+          "Manufacturers deliberately attempt to destroy the Green Pulse project.",
+          "Households refuse to separate organic waste from other materials."
+        ],
+        correct: "B",
+        explanation: "The plot revolves around resolving how a household cleaning chemical interfered with municipal bioreactor microbes."
+      },
+      {
+        qNum: 17,
+        skill: "Cause & Effect",
+        prompt: "Why was Amara's first proposal rejected?",
+        options: [
+          "It would have immediately reduced the city's energy supply.",
+          "The chemical had already disappeared from household products.",
+          "A complete ban would have created significant economic and social disruption.",
+          "The microorganisms could not survive without the chemical.",
+          "Engineers had already developed a more effective filtration system."
+        ],
+        correct: "C",
+        explanation: "The text states the council refused an immediate ban because thousands of households used it and manufacturers warned of economic disruption."
+      },
+      {
+        qNum: 18,
+        skill: "Inference",
+        prompt: "What can be inferred about Amara's second solution?",
+        options: [
+          "It seeks to eliminate one problem without unnecessarily creating another.",
+          "It prioritizes industrial profits over environmental protection.",
+          "It proves that household chemicals are harmless to ecosystems.",
+          "It requires the city to abandon its existing biopower infrastructure.",
+          "It demonstrates that technological solutions are always more effective than regulations."
+        ],
+        correct: "A",
+        explanation: "The filtration solution allowed both the cleaning product's use and biopower generation to co-exist without economic or energy loss."
+      },
+      {
+        qNum: 19,
+        skill: "Philosophical Deduction",
+        prompt: "The statement “Every solution becomes part of another system” suggests that ...",
+        options: [
+          "scientific solutions should never be implemented.",
+          "every technological intervention can produce consequences within interconnected systems.",
+          "environmental systems are too complicated to be improved.",
+          "renewable-energy technologies always cause environmental damage.",
+          "human-designed systems are independent from one another."
+        ],
+        correct: "B",
+        explanation: "The principle asserts that no product or solution exists in a vacuum; it interacts with other technical and ecological systems."
+      },
+      {
+        qNum: 20,
+        skill: "Plot Resolution",
+        prompt: "Which event most clearly represents the resolution of the story?",
+        options: [
+          "The city begins using bioreactors.",
+          "Green Pulse initially supplies twenty percent of the city's energy.",
+          "Amara discovers the chemical contamination.",
+          "The council rejects the proposed ban.",
+          "The filtration process restores Green Pulse's energy output."
+        ],
+        correct: "E",
+        explanation: "Restoring Green Pulse's power output through pre-filtration solves the central problem and resolves the storyline."
+      }
+    ]
+  },
+  {
+    topicId: 5,
+    topicName: "Fusion Energy",
+    storyTitle: "Text 5 — A Star in the Desert",
+    storyParagraphs: [
+      "The year was 2237. On the desert planet Asteria, human settlers depended on a small fusion reactor for electricity. Unlike solar panels, which produced less energy during the planet's long nights, the reactor could theoretically provide continuous power.",
+      "However, the reactor required enormous amounts of water for cooling.",
+      "Water was extremely scarce on Asteria.",
+      "Seventeen-year-old Elias worked with his mother at the settlement's energy station. One morning, the reactor's cooling system malfunctioned. Engineers discovered that repairing it would require using nearly half of the settlement's emergency water reserves.",
+      "Without the water, the reactor would have to shut down.",
+      "The settlement council argued for keeping the reactor operating. The crops were growing in artificial greenhouses, hospitals depended on electricity, and communication systems needed constant power.",
+      "Elias proposed an alternative. Instead of spending the emergency water immediately, the settlement could temporarily reduce its energy demand. Nonessential systems could be switched off, and solar mirrors could be redirected toward thermal storage units. The stored heat could provide limited power during the repair.",
+      "Some residents objected. They argued that reducing consumption would be inconvenient and dangerous.",
+      "Elias responded that the settlement had made a mistake by treating energy and water as separate problems.",
+      "The council accepted the proposal.",
+      "For three days, Asteria operated under strict energy restrictions. The repair team successfully fixed the cooling system without exhausting the emergency water supply.",
+      "Months later, engineers redesigned the reactor's cooling system so that it required much less water.",
+      "The settlement eventually placed a plaque beside the reactor: The future belongs not to the technology that produces the most power, but to the system that wastes the least life."
+    ],
+    questions: [
+      {
+        qNum: 21,
+        skill: "Central Problem",
+        prompt: "What is the central problem faced by the settlement?",
+        options: [
+          "The fusion reactor produces insufficient energy for the settlement.",
+          "The settlement must balance its dependence on continuous electricity with its limited water resources.",
+          "Solar mirrors are unable to function on Asteria.",
+          "The residents refuse to maintain the fusion reactor.",
+          "The settlement has completely exhausted its emergency water supply."
+        ],
+        correct: "B",
+        explanation: "The settlement faces a critical crisis: using scarce emergency water to repair the reactor cooling system or losing power."
+      },
+      {
+        qNum: 22,
+        skill: "Character Strategy / Cause",
+        prompt: "Why does Elias recommend temporarily reducing energy consumption?",
+        options: [
+          "He wants to permanently replace fusion energy with solar power.",
+          "He believes the settlement can survive without electricity.",
+          "He wants to preserve water while maintaining essential services during the repair.",
+          "He believes energy restrictions will increase the reactor's efficiency automatically.",
+          "He wants to demonstrate that technology is unnecessary."
+        ],
+        correct: "C",
+        explanation: "Reducing nonessential electricity usage allowed cooling repair without spending the settlement's vital water reserve."
+      },
+      {
+        qNum: 23,
+        skill: "Inference",
+        prompt: "What can be inferred about the settlement's earlier approach to energy?",
+        options: [
+          "It treated energy production as an isolated problem rather than considering its relationship with other scarce resources.",
+          "It deliberately ignored the needs of hospitals and agricultural systems.",
+          "It had already developed a completely sustainable energy system.",
+          "It preferred solar energy because it consumed large amounts of water.",
+          "It had intentionally limited technological development."
+        ],
+        correct: "A",
+        explanation: "Elias noted that settlers made the mistake of managing water and energy independently rather than as connected resources."
+      },
+      {
+        qNum: 24,
+        skill: "Figurative Language / Theme",
+        prompt: "The phrase “wastes the least life” most likely refers to ...",
+        options: [
+          "minimizing the use of human labor in technological development.",
+          "protecting interconnected resources and living systems from unnecessary consumption.",
+          "preventing people from using electricity for entertainment.",
+          "reducing the number of machines operating in the settlement.",
+          "ensuring that all residents receive exactly the same amount of electricity."
+        ],
+        correct: "B",
+        explanation: "'Life' metaphorically represents ecological and survival resources (like water) that sustain living systems."
+      },
+      {
+        qNum: 25,
+        skill: "Plot Turning Point",
+        prompt: "Which event is the turning point in the story?",
+        options: [
+          "The fusion reactor is introduced to Asteria.",
+          "The cooling system malfunctions.",
+          "The council chooses to adopt Elias's temporary energy-reduction strategy.",
+          "Engineers redesign the cooling system months later.",
+          "A plaque is placed beside the reactor."
+        ],
+        correct: "C",
+        explanation: "The council's decision to adopt Elias's strategy pivots the outcome from imminent water depletion to successful repair."
+      }
+    ]
+  },
+  {
+    topicId: 6,
+    topicName: "Future Harvesting",
+    storyTitle: "Text 6 — The City That Collected Rain",
+    storyParagraphs: [
+      "In 2250, the coastal city of Lumina was famous for its kinetic roads. Every time vehicles passed over specially designed surfaces, tiny generators converted mechanical pressure into electricity.",
+      "The technology worked well, but the city still depended heavily on solar power.",
+      "Then came the Great Cloud Season.",
+      "For four months, dense clouds covered Lumina. Solar production fell by almost sixty percent. The kinetic roads could not produce enough electricity to compensate.",
+      "A young inventor named Sora believed the city was overlooking another source of energy: rain.",
+      "She designed a system called the Raindrop Harvester. Instead of allowing rainwater to flow directly into drainage channels, the system guided falling water through small turbines installed beneath rooftops and bridges.",
+      "Engineers were skeptical. Each raindrop contained very little energy.",
+      "Sora agreed—but argued that the city received billions of raindrops every day. A small amount multiplied across a large system could become significant.",
+      "Her first prototype failed. The turbines were too heavy, and the water flow was insufficient to move them.",
+      "Instead of abandoning the idea, Sora redesigned the system using thousands of miniature turbines. They required much less force to turn and could operate independently.",
+      "During the next storm, the system produced enough electricity to power the city's emergency communication network.",
+      "It did not solve Lumina's energy shortage.",
+      "But it demonstrated something important: energy systems did not always need a single enormous source. Sometimes resilience came from combining many small sources.",
+      "The city eventually connected solar panels, kinetic roads, rain harvesters, and offshore wind turbines into one adaptive network.",
+      "Years later, when another major storm struck, Lumina's residents were surprised to discover that the city remained operational.",
+      "The Raindrop Harvester had never become the city's largest energy source.",
+      "It had become something more important: one of the reasons the city could keep functioning when another source failed."
+    ],
+    questions: [
+      {
+        qNum: 26,
+        skill: "Underlying Idea / Concept",
+        prompt: "What is the underlying idea of the story?",
+        options: [
+          "A renewable-energy system becomes more resilient when it combines multiple complementary sources.",
+          "Small energy sources are always more efficient than large renewable-energy systems.",
+          "Rain is the most reliable renewable-energy source for coastal cities.",
+          "Solar energy should eventually be abandoned in favor of kinetic technology.",
+          "Advanced cities should depend on one energy source to simplify management."
+        ],
+        correct: "A",
+        explanation: "The story highlights energy resilience achieved by diversifying and integrating complementary renewable generation sources."
+      },
+      {
+        qNum: 27,
+        skill: "Technical Reasoning",
+        prompt: "Why did Sora redesign the Raindrop Harvester using miniature turbines?",
+        options: [
+          "The miniature turbines could operate with smaller amounts of water flow.",
+          "The miniature turbines could store rainwater for future use.",
+          "The miniature turbines could produce more energy than offshore wind turbines.",
+          "The miniature turbines required no moving parts.",
+          "The miniature turbines could function without rainfall."
+        ],
+        correct: "A",
+        explanation: "The original turbines were too heavy for raindrop force; miniature turbines turned easily with minimal water kinetic energy."
+      },
+      {
+        qNum: 28,
+        skill: "Plot Element Role",
+        prompt: "What does the failure of Sora's first prototype contribute to the plot?",
+        options: [
+          "It establishes that the city has no interest in renewable energy.",
+          "It demonstrates that scientific innovation often requires modification after initial failure.",
+          "It proves that rain cannot be used as a source of renewable energy.",
+          "It reveals that Sora has misunderstood the city's energy needs.",
+          "It shows that kinetic roads are technically superior to all other systems."
+        ],
+        correct: "B",
+        explanation: "The prototype failure acts as an obstacle driving redesign, illustrating the iterative process of technological innovation."
+      },
+      {
+        qNum: 29,
+        skill: "Deduction / Conclusion",
+        prompt: "Which statement can be logically concluded from the final paragraph?",
+        options: [
+          "The Raindrop Harvester eventually became Lumina's primary energy source.",
+          "The city abandoned solar and wind power after adopting the new technology.",
+          "The value of an energy technology can depend on its contribution to system resilience, not merely its total output.",
+          "Large renewable-energy projects are less useful than small inventions in every situation.",
+          "Lumina's energy network became completely independent of weather conditions."
+        ],
+        correct: "C",
+        explanation: "The ending underscores that secondary systems are vital because they provide grid stability and redundancy when main systems fail."
+      },
+      {
+        qNum: 30,
+        skill: "Author's Purpose",
+        prompt: "Which statement best describes the author's purpose?",
+        options: [
+          "To criticize cities that invest in large-scale renewable-energy projects.",
+          "To explain why rain is more powerful than sunlight as an energy source.",
+          "To narrate how an unconventional idea contributes to a more resilient renewable-energy system.",
+          "To prove that technological failures are necessary for scientific progress.",
+          "To persuade readers to replace solar panels with miniature turbines."
+        ],
+        correct: "C",
+        explanation: "The author crafts a story showing how an unconventional secondary idea (raindrop micro-turbines) strengthens energy grid resilience."
+      }
+    ]
+  }
+];
+
+// App State
+let currentQIndex = 0; // 0 to 29
+let userAnswers = new Array(30).fill(null);
+let flaggedQuestions = new Set();
+let isPracticeMode = false;
+let fontScale = 1.0;
+let isDarkMode = false;
+let timerSeconds = 3600;
+let timerInterval = null;
+
+// Student Identity State
+let studentProfile = {
+  name: "Ahmad Rizki",
+  className: "XII MIPA 1",
+  nisn: "006123456",
+  school: "SMAN 1 Ciracap"
+};
+
+// DOM References
+const landingCoverSection = document.getElementById("landingCoverSection");
+const examWorkspace = document.getElementById("examWorkspace");
+const topicNavBar = document.getElementById("topicNavBar");
+
+const storyTag = document.getElementById("storyTag");
+const storyThemeBadge = document.getElementById("storyThemeBadge");
+const storyQRange = document.getElementById("storyQRange");
+const storyTitle = document.getElementById("storyTitle");
+const storyBody = document.getElementById("storyBody");
+
+const qNumberBadge = document.getElementById("qNumberBadge");
+const skillBadge = document.getElementById("skillBadge");
+const qPrompt = document.getElementById("qPrompt");
+const qOptions = document.getElementById("qOptions");
+const feedbackBox = document.getElementById("feedbackBox");
+
+const flagBtn = document.getElementById("flagBtn");
+const flagText = document.getElementById("flagText");
+const prevQBtn = document.getElementById("prevQBtn");
+const nextQBtn = document.getElementById("nextQBtn");
+
+const paletteGrid = document.getElementById("paletteGrid");
+const progressBar = document.getElementById("progressBar");
+const answeredCount = document.getElementById("answeredCount");
+const topicPillsContainer = document.getElementById("topicPillsContainer");
+
+const modeToggleBtn = document.getElementById("modeToggleBtn");
+const modeLabel = document.getElementById("modeLabel");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
+const themeIcon = document.getElementById("themeIcon");
+
+const customDialogModal = document.getElementById("customDialogModal");
+
+function getQuestionData(index) {
+  let accumulated = 0;
+  for (let t = 0; t < dataset.length; t++) {
+    const topic = dataset[t];
+    if (index < accumulated + topic.questions.length) {
+      const qInTopic = index - accumulated;
+      return {
+        topic: topic,
+        question: topic.questions[qInTopic],
+        topicIndex: t
+      };
+    }
+    accumulated += topic.questions.length;
+  }
+  return null;
+}
+
+function showLandingCover() {
+  landingCoverSection.classList.remove("hidden");
+  examWorkspace.classList.add("hidden");
+  topicNavBar.classList.add("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function handleStartExam(e) {
+  if (e) e.preventDefault();
+  
+  studentProfile.name = document.getElementById("studentNameInput").value || "Siswa TKA";
+  studentProfile.className = document.getElementById("studentClassInput").value || "XII SMA";
+  studentProfile.nisn = document.getElementById("studentNisnInput").value || "-";
+  studentProfile.school = document.getElementById("studentSchoolInput").value || "SMAN 1 Ciracap";
+
+  landingCoverSection.classList.add("hidden");
+  examWorkspace.classList.remove("hidden");
+  topicNavBar.classList.remove("hidden");
+
+  loadQuestion(0);
+  if (!timerInterval) startTimer();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function startPracticeDirectly() {
+  isPracticeMode = true;
+  modeLabel.innerText = "Mode: Practice";
+  handleStartExam(null);
+}
+
+function renderTopicPills() {
+  topicPillsContainer.innerHTML = "";
+  dataset.forEach((t, i) => {
+    const startQ = i * 5 + 1;
+    const endQ = startQ + 4;
+    const pill = document.createElement("button");
+    const active = getQuestionData(currentQIndex).topicIndex === i;
+    
+    pill.className = `px-3 py-1.5 rounded-xl font-semibold text-xs whitespace-nowrap transition flex items-center gap-1.5 border ${
+      active
+        ? "bg-cyan-600 text-white border-cyan-500 shadow-sm"
+        : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"
+    }`;
+    pill.innerHTML = `<span class="w-2 h-2 rounded-full ${active ? "bg-amber-300" : "bg-cyan-500"}"></span> ${t.topicName} (${startQ}-${endQ})`;
+    pill.onclick = () => {
+      loadQuestion(i * 5);
+    };
+    topicPillsContainer.appendChild(pill);
+  });
+}
+
+function renderPalette() {
+  paletteGrid.innerHTML = "";
+  let answeredNum = 0;
+
+  for (let i = 0; i < 30; i++) {
+    const btn = document.createElement("button");
+    const isCurrent = i === currentQIndex;
+    const isAnswered = userAnswers[i] !== null;
+    const isFlagged = flaggedQuestions.has(i);
+
+    if (isAnswered) answeredNum++;
+
+    let bgClass = "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700";
+    if (isAnswered) bgClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
+    if (isFlagged) bgClass = "bg-amber-500 text-white border-amber-600 font-bold";
+    if (isCurrent) bgClass = "ring-2 ring-cyan-500 ring-offset-2 dark:ring-offset-slate-900 bg-cyan-600 text-white font-extrabold";
+
+    btn.className = `h-9 rounded-lg border text-xs font-mono transition flex items-center justify-center relative ${bgClass}`;
+    btn.innerText = i + 1;
+
+    if (isFlagged && !isCurrent) {
+      const dot = document.createElement("span");
+      dot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white dark:border-slate-900";
+      btn.appendChild(dot);
+    }
+
+    btn.onclick = () => loadQuestion(i);
+    paletteGrid.appendChild(btn);
+  }
+
+  answeredCount.innerText = `${answeredNum} / 30 Answered`;
+  const pct = Math.round((answeredNum / 30) * 100);
+  progressBar.style.width = `${pct}%`;
+}
+
+function loadQuestion(index) {
+  currentQIndex = index;
+  const data = getQuestionData(index);
+  const topic = data.topic;
+  const q = data.question;
+
+  // Render Story Panel
+  storyTag.innerText = `Topic ${data.topicIndex + 1} of 6`;
+  storyThemeBadge.innerText = topic.topicName;
+  storyQRange.innerText = `${data.topicIndex * 5 + 1} - ${data.topicIndex * 5 + 5}`;
+  storyTitle.innerText = topic.storyTitle;
+  storyBody.innerHTML = topic.storyParagraphs.map(p => `<p class="mb-3">${p}</p>`).join("");
+
+  // Render Question Panel
+  qNumberBadge.innerText = `Q${q.qNum}`;
+  skillBadge.innerText = q.skill;
+  qPrompt.innerText = q.prompt;
+
+  // Options Rendering
+  qOptions.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+  q.options.forEach((opt, optIdx) => {
+    const letter = letters[optIdx];
+    const isSelected = userAnswers[index] === letter;
+
+    const optBtn = document.createElement("button");
+    let borderStyle = "border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200";
+
+    if (isSelected) {
+      borderStyle = "border-cyan-500 bg-cyan-50 dark:bg-cyan-950/40 text-cyan-900 dark:text-cyan-200 font-semibold ring-1 ring-cyan-500";
+    }
+
+    // In Practice Mode, show instant feedback
+    if (isPracticeMode && isSelected) {
+      if (letter === q.correct) {
+        borderStyle = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold ring-1 ring-emerald-500";
+      } else {
+        borderStyle = "border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 font-semibold ring-1 ring-rose-500";
+      }
+    }
+
+    optBtn.className = `w-full text-left p-3.5 rounded-xl border text-xs sm:text-sm transition flex items-start gap-3 ${borderStyle}`;
+    optBtn.innerHTML = `
+      <span class="w-6 h-6 rounded-lg bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 flex items-center justify-center font-bold font-mono text-xs text-slate-600 dark:text-slate-200 shrink-0 ${isSelected ? 'bg-cyan-600 border-cyan-600 text-white' : ''}">
+        ${letter}
+      </span>
+      <span class="pt-0.5 leading-snug">${opt}</span>
+    `;
+
+    optBtn.onclick = () => selectOption(index, letter);
+    qOptions.appendChild(optBtn);
+  });
+
+  // Flag Button status
+  if (flaggedQuestions.has(index)) {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg bg-amber-500 text-white font-bold transition flex items-center gap-1";
+    flagText.innerText = "Flagged";
+  } else {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1";
+    flagText.innerText = "Flag";
+  }
+
+  // Prev / Next button state
+  prevQBtn.disabled = index === 0;
+  nextQBtn.innerHTML = index === 29 ? `Review <i class="fa-solid fa-check-double"></i>` : `Next <i class="fa-solid fa-chevron-right"></i>`;
+
+  // Practice Mode Explanation Box
+  if (isPracticeMode && userAnswers[index] !== null) {
+    feedbackBox.classList.remove("hidden");
+    const isCorrect = userAnswers[index] === q.correct;
+    if (isCorrect) {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-check text-emerald-500"></i> Correct Answer!</strong><br>${q.explanation}`;
+    } else {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-xmark text-rose-500"></i> Incorrect. Correct option is (${q.correct})</strong><br>${q.explanation}`;
+    }
+  } else {
+    feedbackBox.classList.add("hidden");
+  }
+
+  renderTopicPills();
+  renderPalette();
+}
+
+function selectOption(qIdx, letter) {
+  userAnswers[qIdx] = letter;
+  loadQuestion(qIdx);
+}
+
+// Navigation Handlers
+prevQBtn.onclick = () => { if (currentQIndex > 0) loadQuestion(currentQIndex - 1); };
+nextQBtn.onclick = () => {
+  if (currentQIndex < 29) {
+    loadQuestion(currentQIndex + 1);
+  } else {
+    triggerFinishConfirmation();
+  }
+};
+
+flagBtn.onclick = () => {
+  if (flaggedQuestions.has(currentQIndex)) {
+    flaggedQuestions.delete(currentQIndex);
+  } else {
+    flaggedQuestions.add(currentQIndex);
+  }
+  loadQuestion(currentQIndex);
+};
+
+// Controls
+modeToggleBtn.onclick = () => {
+  isPracticeMode = !isPracticeMode;
+  modeLabel.innerText = isPracticeMode ? "Mode: Practice" : "Mode: Exam";
+  loadQuestion(currentQIndex);
+};
+
+document.getElementById("fontIncBtn").onclick = () => {
+  if (fontScale < 1.3) {
+    fontScale += 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+document.getElementById("fontDecBtn").onclick = () => {
+  if (fontScale > 0.8) {
+    fontScale -= 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+
+themeToggleBtn.onclick = () => {
+  isDarkMode = !isDarkMode;
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+    themeIcon.className = "fa-solid fa-sun text-amber-400";
+  } else {
+    document.documentElement.classList.remove("dark");
+    themeIcon.className = "fa-solid fa-moon text-slate-600";
+  }
+};
+
+document.getElementById("scrollToTopStory").onclick = () => {
+  storyBody.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (timerSeconds > 0) {
+      timerSeconds--;
+      const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+      const s = (timerSeconds % 60).toString().padStart(2, '0');
+      document.getElementById("timerDisplay").innerText = `${m}:${s}`;
+    } else {
+      clearInterval(timerInterval);
+      showCustomDialog(
+        '<i class="fa-solid fa-hourglass-end text-amber-500 text-2xl"></i>',
+        "Time is Up!",
+        "The allocated exam time has elapsed. Your answers will now be evaluated.",
+        [
+          {
+            text: "View Results",
+            class: "bg-cyan-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+            onClick: () => {
+              hideCustomDialog();
+              calculateResults();
+            }
+          }
+        ]
+      );
+    }
+  }, 1000);
+}
+
+// Custom Modal Dialog Helper (Replaces standard alert and confirm)
+function showCustomDialog(iconHTML, title, message, actionButtons) {
+  document.getElementById("dialogIconContainer").innerHTML = iconHTML;
+  document.getElementById("dialogTitle").innerText = title;
+  document.getElementById("dialogMessage").innerText = message;
+  
+  const actionsContainer = document.getElementById("dialogActions");
+  actionsContainer.innerHTML = "";
+  
+  actionButtons.forEach(btnConfig => {
+    const btn = document.createElement("button");
+    btn.className = btnConfig.class;
+    btn.innerText = btnConfig.text;
+    btn.onclick = btnConfig.onClick;
+    actionsContainer.appendChild(btn);
+  });
+
+  customDialogModal.classList.remove("hidden");
+}
+
+function hideCustomDialog() {
+  customDialogModal.classList.add("hidden");
+}
+
+function triggerFinishConfirmation() {
+  const answered = userAnswers.filter(a => a !== null).length;
+  if (answered < 30) {
+    showCustomDialog(
+      '<i class="fa-solid fa-triangle-exclamation text-amber-500 text-2xl"></i>',
+      "Unanswered Questions",
+      `You have completed ${answered} out of 30 questions. Are you sure you want to finish the exam now?`,
+      [
+        {
+          text: "Cancel",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Finish & Submit",
+          class: "bg-cyan-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  } else {
+    showCustomDialog(
+      '<i class="fa-solid fa-circle-check text-emerald-500 text-2xl"></i>',
+      "Complete Exam",
+      "All 30 questions answered! Would you like to submit and view your detailed report?",
+      [
+        {
+          text: "Keep Reviewing",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Submit Exam",
+          class: "bg-gradient-to-r from-amber-500 to-cyan-600 text-white font-extrabold py-2 px-5 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  }
+}
+
+document.getElementById("finishTestBtn").onclick = triggerFinishConfirmation;
+
+function calculateResults() {
+  let score = 0;
+  let reviewHTML = "";
+
+  for (let i = 0; i < 30; i++) {
+    const qData = getQuestionData(i);
+    const q = qData.question;
+    const userAns = userAnswers[i];
+    const isCorrect = userAns === q.correct;
+    if (isCorrect) score++;
+
+    reviewHTML += `
+      <div class="p-4 rounded-xl border ${isCorrect ? 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-300 dark:border-emerald-800' : 'bg-rose-50/50 dark:bg-rose-950/20 border-rose-300 dark:border-rose-800'} text-xs space-y-2">
+        <div class="flex items-center justify-between font-bold">
+          <span class="text-slate-800 dark:text-slate-200">
+            Q${i + 1}. (${qData.topic.topicName}) — ${q.prompt}
+          </span>
+          <span class="${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'} uppercase font-mono">
+            ${isCorrect ? '✓ Correct' : '✕ Incorrect'}
+          </span>
+        </div>
+        <div class="text-slate-600 dark:text-slate-400">
+          Your Choice: <strong>${userAns ? userAns : 'Unanswered'}</strong> | Key Answer: <strong class="text-emerald-600 dark:text-emerald-400">${q.correct}</strong>
+        </div>
+        <div class="p-2.5 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+          <strong>Explanation:</strong> ${q.explanation}
+        </div>
+      </div>
+    `;
+  }
+
+  const pct = Math.round((score / 30) * 100);
+  document.getElementById("finalScoreVal").innerText = `${score} / 30`;
+  document.getElementById("finalPercentage").innerText = `${pct}% Accuracy`;
+
+  // Inject metadata into report
+  document.getElementById("resStudentName").innerText = studentProfile.name;
+  document.getElementById("resStudentClass").innerText = studentProfile.className;
+  document.getElementById("resStudentSchool").innerText = studentProfile.school;
+
+  let grade = "C";
+  let gradeText = "Sufficient HOTS Analytical Capability";
+  if (pct >= 85) { grade = "A"; gradeText = "Exceptional HOTS Proficiency!"; }
+  else if (pct >= 70) { grade = "B"; gradeText = "Good Critical Reading Capability"; }
+  else if (pct < 50) { grade = "D"; gradeText = "Needs Further Reading Practice"; }
+
+  document.getElementById("gradeBadge").innerText = `Grade: ${grade}`;
+  document.getElementById("gradeDesc").innerText = gradeText;
+
+  const elapsedSec = 3600 - timerSeconds;
+  const elapsedMin = Math.floor(elapsedSec / 60);
+  const elapsedS = elapsedSec % 60;
+  document.getElementById("timeTakenVal").innerText = `${elapsedMin}m ${elapsedS}s`;
+
+  document.getElementById("reviewContainer").innerHTML = reviewHTML;
+  document.getElementById("resultModal").classList.remove("hidden");
+}
+
+document.getElementById("closeModalBtn").onclick = () => {
+  document.getElementById("resultModal").classList.add("hidden");
+};
+
+document.getElementById("restartTestBtn").onclick = () => {
+  showCustomDialog(
+    '<i class="fa-solid fa-rotate-right text-cyan-500 text-2xl"></i>',
+    "Reset & Retake Test",
+    "All current progress and answers will be cleared. Do you wish to restart?",
+    [
+      {
+        text: "Cancel",
+        class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: hideCustomDialog
+      },
+      {
+        text: "Reset Now",
+        class: "bg-rose-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: () => {
+          hideCustomDialog();
+          userAnswers = new Array(30).fill(null);
+          flaggedQuestions.clear();
+          timerSeconds = 3600;
+          document.getElementById("resultModal").classList.add("hidden");
+          loadQuestion(0);
+        }
+      }
+    ]
+  );
+};
+
+document.getElementById("printResultBtn").onclick = () => {
+  window.print();
+};
+
+window.onload = function () {
+  // Start on the Landing Cover / Profile Entry
+  showLandingCover();
+};
+</script>
+</body>
+</html>
